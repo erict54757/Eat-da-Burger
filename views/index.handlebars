@@ -1,0 +1,63 @@
+
+
+<div class="conatainer">
+	<div class="row">
+
+
+
+		<div class="col-6 d-flex justify-content-center">
+
+
+
+
+			<ul class="" id="burgers"> <strong>
+					<div class="text-center">To be eaten</div>
+				</strong>
+				{{#each burger}}
+				<li>
+					<form action="/devour" method="POST">
+						<h5>Click <span><button class="btn btn-primary btn-md " id="devourBtn" value= {{ id}} name="key" >ME</button></span> to devour
+							the burger</h5>
+					</form>
+					<p>Burger: {{burger}}</p>
+				</li>
+				<hr>
+				{{/each}}
+			</ul>
+		</div>
+
+
+		<div class="col-6 d-flex justify-content-center">
+			<ul class="" id="devoured"> <strong>
+					<div class="text-center">Devoured</div>
+				</strong>
+
+				{{#each devour}}
+				<li>
+					<p>ID: {{id}}</p>
+					<p>Burger: {{burger}}</p>
+				</li>
+				<hr>
+				{{/each}}
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+<div class="container">
+	<div class="row justify-content-center">
+
+
+
+		<form class="col-sm-6 d-flex justify-content-center" action="/" method="POST">
+			<input type="text" name="burger"></input>
+			<button class= "btn btn-primary" type="submit">Submit</button>
+		</form>
+
+		<form class="col-sm-6 d-flex justify-content-center" action="/delete" method="post">
+		<button  class= "btn btn-primary" type="submit">Clear All</button>
+		</form>
+
+	</div>
+</div>
